@@ -1,2 +1,2 @@
-# This repo contains exercises for Linux Programming Course
+# Exercises for Linux Programming course
 
