@@ -5,8 +5,8 @@
 int main()
 {
     pid_t pid = getpid();
-    printf("%d\n", pid);
 
+    printf("%d\n", pid);
     daemon(0, 0);
 
     while(1);
