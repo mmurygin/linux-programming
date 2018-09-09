@@ -125,8 +125,12 @@ void read_shared()
     printf("Finish reading\n");
 
     pthread_mutex_lock(&m);
-    pending_read = 0;
+    --pending_read;
     if (pending_cancel)
+    {
+        pthread_cond_signal(&c_can_cancel);
+    }
+    else if (pending_read)
     {
         pthread_cond_signal(&c_can_cancel);
     }
